@@ -8,7 +8,7 @@ In all the notebooks, the dataset has been split into training, validation and t
 This notebook address the classification problem using the  [Tensorflow Dataset API](https://tensorflow.google.cn/api_docs/python/tf/data/Dataset?version=stable). 
 
 Two models are trained, both based on the same deep CNN architecture. The first one is a plain model trained without
-any optimization, while the second one is trained using data augmentation and dropout. 
+any regularization, while the second one is trained using data augmentation and dropout. 
 
 All the images have been standard normalized (e.g. each image has mean equal to 0 and std deviation equal to 1).
 
