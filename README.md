@@ -21,10 +21,13 @@ So far, the highest accuracy has been reached using a fine-tuned EfficientNetB7 
 |Micro|0.90|0.90|0.90
 |Macro|0.91|0.90|0.90
 
+**Accuracy and loss curves of the fine-tuning training:**
+
 ![acc_curves_efficientnetb7](img/acc_curves_efficientnetb7.png)
 ![loss_curves_efficientnetb7](img/loss_curves_efficientnetb7.png)
 
 Total number of wrong predictions on the test dataset: **20 out of 209**.
+
 
 ## Notebooks details
 ### [tf_flowers_complete_tensorflow_dataset.ipynb](https://github.com/Telemaco019/flower_recognition/blob/master/tf_flowers_complete_tensorflow_dataset.ipynb)
