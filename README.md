@@ -6,8 +6,25 @@ This repository contains some notebooks for classifying the [Kaggle Flower Recog
 In each of the developed notebooks, the dataset is split into training, validation and test in the following percentages, respectively: 75%, 15% and 10%. All the images are also resized to 224x224 pixels. For evaluating the trained models, the adopted metrics are precision, recall and F1 score, all both micro and macro averaged. 
 
 ## Results summary
-The [Tensorflow Data API](https://www.tensorflow.org/api_docs/python/tf/data) turns out to offer better performance than the Keras [Image Preprocessing](https://keras.io/preprocessing/image/) module. This is supposedly due to prefetching and caching operations offered by the former API, as explained [here](https://www.tensorflow.org/guide/data_performance). Moreover, the Tensorflow Data API turned out to be more flexible and easier to customise in term of data pre-processing and augmentation operations. For these reasons, the Tensorflow Data API has been used in all the later developed notebooks.  
 
+### Tensorflow Data API vs. Keras Image Processing
+The [Tensorflow Data API](https://www.tensorflow.org/api_docs/python/tf/data) turns out to offer better performance than the Keras [Image Preprocessing](https://keras.io/preprocessing/image/) module. This is supposedly due to prefetching and caching operations offered by the former API, as explained [here](https://www.tensorflow.org/guide/data_performance). Moreover, the Tensorflow Data API turned out to be more flexible and easier to customise in term of data pre-processing and data augmentation operations. For these reasons, the Tensorflow Data API has been used for building the input pipeline of all the later developed notebooks. 
+
+### Data Augmentation
+Data augmentation provided a remarkable improvement of the models accuracy. After several tries, the best performance improvement has been achieved by performing random cropping, vertical/horizonal mirroring and brightness adjustment. With this set of data augmentation operations, the F1 macro score of the neural network used in [tf_flowers_complete_tensorflow_dataset.ipynb](https://github.com/Telemaco019/flower_recognition/blob/master/tf_flowers_complete_tensorflow_dataset.ipynb) raised from 0.75 to 0.86. 
+
+### Best results
+So far, the highest accuracy has been reached using a fine-tuned EfficientNetB7 in [tf_flowers_complete_efficientnetb7.ipynb](https://github.com/Telemaco019/flower_recognition/blob/master/tf_flowers_complete_efficientnetb7.ipynb). The results of this model are the following: 
+
+|Average Type |Prec |Rec |F1
+|--- |--- |--- |---
+|Micro|0.90|0.90|0.90
+|Macro|0.91|0.90|0.90
+
+![acc_curves_efficientnetb7](img/acc_curves_efficientnetb7.png)
+![loss_curves_efficientnetb7](img/loss_curves_efficientnetb7.png)
+
+Total number of wrong predictions on the test dataset: **20 out of 209**.
 
 ## [tf_flowers_complete_tensorflow_dataset.ipynb](https://github.com/Telemaco019/flower_recognition/blob/master/tf_flowers_complete_tensorflow_dataset.ipynb)
 This notebook address the classification problem using the [Tensorflow Data API](https://www.tensorflow.org/api_docs/python/tf/data). 
