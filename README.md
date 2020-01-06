@@ -21,7 +21,7 @@ So far, the highest accuracy has been reached using an Xception network trained 
 |Micro|0.97|0.97|0.97
 |Macro|0.97|0.96|0.97
 
-**Accuracy and loss curves of the fine-tuning training:**
+**Accuracy and loss curves:**
 
 ![acc_curves_xception](img/acc_curves_xception.png)
 ![loss_curves_xception](img/loss_curves_xception.png)
