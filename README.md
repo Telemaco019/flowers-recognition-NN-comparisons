@@ -14,19 +14,19 @@ The [Tensorflow Data API](https://www.tensorflow.org/api_docs/python/tf/data) tu
 Data augmentation provided a remarkable improvement of the models accuracy. After several tries, the best performance improvement has been achieved by performing random cropping, vertical/horizonal mirroring and brightness adjustment. With this set of data augmentation operations, the F1 macro score of the neural network used in [tf_flowers_complete_tensorflow_dataset.ipynb](https://github.com/Telemaco019/flower_recognition/blob/master/tf_flowers_complete_tensorflow_dataset.ipynb) raised from 0.75 to 0.86. 
 
 ### Best results
-So far, the highest accuracy has been reached using a fine-tuned EfficientNetB7 in [tf_flowers_complete_efficientnetb7.ipynb](https://github.com/Telemaco019/flower_recognition/blob/master/tf_flowers_complete_efficientnetb7.ipynb). The results of this model are the following: 
+So far, the highest accuracy has been reached using an Xception network trained from scratch in [tf_flowers_complete_xception.ipynb](https://github.com/Telemaco019/flower_recognition/blob/master/notebooks/tf_flowers_complete_xception.ipynb). The results of this model are the following: 
 
 |Average Type |Prec |Rec |F1
 |--- |--- |--- |---
-|Micro|0.90|0.90|0.90
-|Macro|0.91|0.90|0.90
+|Micro|0.97|0.97|0.97
+|Macro|0.97|0.96|0.97
 
 **Accuracy and loss curves of the fine-tuning training:**
 
-![acc_curves_efficientnetb7](img/acc_curves_efficientnetb7.png)
-![loss_curves_efficientnetb7](img/loss_curves_efficientnetb7.png)
+![acc_curves_xception](img/acc_curves_xception.png)
+![loss_curves_xception](img/loss_curves_xception.png)
 
-Total number of wrong predictions on the test dataset: **20 out of 209**.
+Total number of wrong predictions on the test dataset: **7 out of 209**.
 
 
 ## Notebooks details
@@ -79,3 +79,10 @@ The notebook includes several attempts:
 Same as [tf_flowers_complete_efficientnetb0.ipynb](https://github.com/Telemaco019/flower_recognition/blob/master/tf_flowers_complete_efficientnetb0.ipynb), but this time using the biggest available Keras implementation of EfficientNet, e.g. EfficientNetB7. Even in this case, the ImageNet pre-trained version of the network is used. 
 
 Due to the remarkable size of the network, it was not possible to perform Take 3 (e.g. training EfficientNet from scratch) using EfficientNetB7 on Google Colab. 
+
+### [tf_flowers_complete_xception.ipynb](https://github.com/Telemaco019/flower_recognition/blob/master/notebooks/tf_flowers_complete_xception.ipynb)
+This notebook uses an [Xception](https://arxiv.org/abs/1610.02357) network.
+
+First, an ImageNet pre-trained Xception is used both for feature extraction and fine tuning. The implemented model however overfits after few epochs without reaching high levels of accuracy. 
+
+As second attempt, an Xception network is trained from scratch on the available dataset for 80 epochs. Since the network does not have an extremely high number of parameters, the training was relatively fast and it required only around one minute per epoch on Google Colab. The trained model reached a validation accuracy of 95% and scored an F1 value of 0.97 over the test dataset. 
