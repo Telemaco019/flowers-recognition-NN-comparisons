@@ -1,7 +1,7 @@
 # Flowers Recognition
 
 ## Overview
-This repository contains some notebooks for classifying the [Kaggle Flower Recognition](https://www.kaggle.com/alxmamaev/flowers-recognition) dataset, which consists of 4242 images of flowers belonging to 5 different categories. The aim of this repository is just to collect some of the notebooks I developed for practising with Image Classification and summarising the results I obtained trying out different State-of-the-Art Neural Networks and training techniques. 
+This repository contains some notebooks developed for classifying the [Kaggle Flower Recognition](https://www.kaggle.com/alxmamaev/flowers-recognition) dataset, which consists of 4242 images of flowers belonging to 5 different categories. The aim of this repository is just to collect some of the notebooks I developed for practising with Image Classification and summarising the results I obtained trying out different State-of-the-Art Neural Networks and training techniques. 
 
 The experiments included in the notebooks have been carried out with the following goals in mind:  
 1. Assess which are the most effective State-of-the-Art Neural Networks 
